@@ -3,6 +3,7 @@ from moviepy.config import change_settings
 import numpy as np
 from django.http import FileResponse
 from .conf import IMAGEMAGICK_BINARY
+from .models import TextRequest
 
 
 change_settings({"IMAGEMAGICK_BINARY": IMAGEMAGICK_BINARY})
@@ -13,6 +14,10 @@ def video_maker(request):
 
     # Получаем текст из GET параметра
     text = request.GET.get('text', 'Default text')
+
+    # Создание и сохранение нового объекта TextRequest
+    text_request = TextRequest(text=text)
+    text_request.save()
 
     # Определение размера и цвета фона
     background = ColorClip(
