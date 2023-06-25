@@ -1,7 +1,8 @@
-from moviepy.editor import TextClip, CompositeVideoClip, ColorClip
-from moviepy.config import change_settings
-import numpy as np
 from django.http import FileResponse
+from moviepy.config import change_settings
+from moviepy.editor import ColorClip, CompositeVideoClip, TextClip
+import numpy as np
+
 from .conf import IMAGEMAGICK_BINARY
 from .models import TextRequest
 
