@@ -1,15 +1,13 @@
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'h6#or1-ax-62_mszd72x)^+ikxz$!59=)l2_n-o%*h_c%$+s5k'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['84.201.166.7', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'video_maker.apps.VideoMakerConfig',
