@@ -7,7 +7,7 @@ SECRET_KEY = 'h6#or1-ax-62_mszd72x)^+ikxz$!59=)l2_n-o%*h_c%$+s5k'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'video_maker.apps.VideoMakerConfig',
