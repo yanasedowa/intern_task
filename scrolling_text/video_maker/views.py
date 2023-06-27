@@ -1,8 +1,15 @@
+import numpy as np
+from PIL import ImageFont
+
 from django.http import FileResponse
 from moviepy.editor import ColorClip, CompositeVideoClip, TextClip
-import numpy as np
 
 from .models import TextRequest
+
+
+def get_text_size(text, font_path, font_size):
+    font = ImageFont.truetype(font_path, font_size)
+    return font.getsize(text)
 
 
 def video_maker(request):
@@ -15,6 +22,10 @@ def video_maker(request):
     text_request = TextRequest(text=text)
     text_request.save()
 
+    font_path = 'cour.ttf'
+    font_size = FONT_SIZE
+    text_width, text_height = get_text_size(text, font_path, font_size)
+
     # Определение размера и цвета фона
     background = ColorClip(
         (100, 100), col=np.array([255, 105, 180])
@@ -26,7 +37,7 @@ def video_maker(request):
 
     # Создание бегущей строки (изменяя позицию по горизонтали)
     txt_mov = txt_clip.set_pos(
-        lambda t: (-t * (len(text) * (FONT_SIZE / 2) / 3), 30)
+        lambda t: (100-t * (text_width / 3), 30)
     ).set_duration(3)
 
     # Задаем имя файлу
