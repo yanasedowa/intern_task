@@ -116,7 +116,19 @@ https://imagemagick.org/script/download.php
 
 
 
+Для Windows:
+
 Прописать в файле conf.py в переменной IMAGEMAGICK_BINARY путь к ImageMagick.
+
+Во views прописать:
+
+```
+
+from .conf import IMAGEMAGICK_BINARY
+
+change_settings({"IMAGEMAGICK_BINARY": IMAGEMAGICK_BINARY})
+
+```
 
 
 
