@@ -1,5 +1,5 @@
 certifi==2023.5.7
-charset-normalizer==3.1.0
+charset-normalizer==2.0.12
 colorama==0.4.6
 decorator==4.4.2
 Django==2.2.19
@@ -7,13 +7,13 @@ idna==3.4
 imageio==2.31.1
 imageio-ffmpeg==0.4.8
 moviepy==1.0.3
-numpy==1.25.0
+numpy==1.23.3
 Pillow==9.5.0
 proglog==0.1.10
 psycopg2==2.9.6
 python-dotenv==1.0.0
 pytz==2023.3
-requests==2.31.0
+requests==2.27.1
 sqlparse==0.4.4
 tqdm==4.65.0
-urllib3==2.0.3
+urllib3==1.26.16
