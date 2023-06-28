@@ -37,7 +37,7 @@ def video_maker(request):
 
     # Создание бегущей строки (изменяя позицию по горизонтали)
     txt_mov = txt_clip.set_pos(
-        lambda t: (100-t * (text_width / 3), 30)
+        lambda t: (50-t * (text_width / 3), 30)
     ).set_duration(3)
 
     # Задаем имя файлу
