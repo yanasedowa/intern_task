@@ -22,7 +22,7 @@ def video_maker(request):
     text_request = TextRequest(text=text)
     text_request.save()
 
-    font_path = 'content/testproject/scrolling_text/video_maker/arial.ttf'
+    font_path = '/content/testproject/scrolling_text/video_maker/arial.ttf'
     font_size = FONT_SIZE
     text_width, text_height = get_text_size(text, font_path, font_size)
 
