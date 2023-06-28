@@ -1,4 +1,3 @@
-import os
 import numpy as np
 from PIL import ImageFont
 
@@ -6,8 +5,6 @@ from django.http import FileResponse
 from moviepy.editor import ColorClip, CompositeVideoClip, TextClip
 
 from .models import TextRequest
-
-current_directory = os.getcwd()
 
 
 def get_text_size(text, font_path, font_size):
@@ -25,7 +22,7 @@ def video_maker(request):
     text_request = TextRequest(text=text)
     text_request.save()
 
-    font_path = os.path.join(current_directory, 'arial.ttf')
+    font_path = 'content/testproject/scrolling_text/video_maker/arial.ttf'
     font_size = FONT_SIZE
     text_width, text_height = get_text_size(text, font_path, font_size)
 
