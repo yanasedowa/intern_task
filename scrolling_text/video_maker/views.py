@@ -1,10 +1,15 @@
 import numpy as np
 from PIL import ImageFont
-
+from moviepy.config import change_settings
 from django.http import FileResponse
 from moviepy.editor import ColorClip, CompositeVideoClip, TextClip
 
 from .models import TextRequest
+
+
+IMAGEMAGICK_BINARY = r'C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe'
+
+change_settings({"IMAGEMAGICK_BINARY": IMAGEMAGICK_BINARY})
 
 
 def get_text_size(text, font_path, font_size):
@@ -22,7 +27,7 @@ def video_maker(request):
     text_request = TextRequest(text=text)
     text_request.save()
 
-    font_path = 'cour.ttf'
+    font_path = './arial.ttf'
     font_size = FONT_SIZE
     text_width, text_height = get_text_size(text, font_path, font_size)
 
